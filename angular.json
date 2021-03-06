@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "auth0-angular-sample"
+  "defaultProject": "auth0-angular-sample",
+  "cli": {
+    "analytics": "6d5286f4-5c7a-41d5-84d3-3dd99ec4b7fd"
+  }
 }

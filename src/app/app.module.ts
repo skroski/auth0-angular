@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,7 +15,9 @@ import { HomeContentComponent } from './components/home-content/home-content.com
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ExternalApiComponent } from './pages/external-api/external-api.component';
-
+import { AuthModule } from '@auth0/auth0-angular';
+import {environment as env} from '../environments/environment';
+import { LoginButtonComponent } from './components/login-button/login-button.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +30,14 @@ import { ExternalApiComponent } from './pages/external-api/external-api.componen
     HomeComponent,
     ProfileComponent,
     ExternalApiComponent,
+    LoginButtonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    AuthModule.forRoot({...env.auth,})
   ],
   bootstrap: [AppComponent],
 })
